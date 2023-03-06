@@ -15,5 +15,6 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'consistent-return': 'off',
     'no-promise-executor-return': 'off',
+    camelcase: 'off',
   },
 };

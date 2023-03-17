@@ -21,16 +21,14 @@ let contacts = [{
 ];
 
 class ContactsRepository {
-  findAll() {
-    return new Promise((resolve) => {
-      resolve(contacts);
-    });
+  async findAll() {
+    const rows = await db.query('SELECT * FROM contacts');
+    return rows;
   }
 
-  findById(id) {
-    return new Promise((resolve) => resolve(
-      contacts.find((contact) => contact.id === id),
-    ));
+  async findById(id) {
+    const rows = await db.query('SELECT * FROM contacts', [id]);
+    return rows;
   }
 
   findByEmail(email) {
